@@ -1,0 +1,20 @@
+.joinDiv{
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    column-gap: 10px;
+}
+.users{
+    background-color: lightsteelblue;
+    border: 2px solid steelblue;
+}
+.posts{
+    background-color: lavender;
+    border: 2px solid steelblue;
+}
+.comments{
+    margin: 25px;
+    padding: 10px;
+    background-color: thistle;
+    border: 2px solid steelblue;
+}
