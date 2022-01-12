@@ -8,13 +8,13 @@ function App() {
 
 
     return (
-        <div className={App}>
-            <div className='joinDiv'>
-                <div className='users'><Users/></div>
-                <div className='posts'><Posts/></div>
+        <div className={'App'}>
+            <div className={'JoinDiv'}>
+                <div className={'Users'}><Users/></div>
+                <div className={'Posts'}><Posts/></div>
 
             </div>
-            <div className='comments'><Comments/></div>
+            <div className={'Comments'}><Comments/></div>
 
         </div>
     );

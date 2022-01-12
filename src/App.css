@@ -1,18 +1,22 @@
-.joinDiv{
+.flights{
+    margin: 20px;
+
+}
+.JoinDiv{
     display: flex;
     margin: 20px;
     padding: 10px;
     column-gap: 10px;
 }
-.users{
+.Users{
     background-color: lightsteelblue;
     border: 2px solid steelblue;
 }
-.posts{
+.Posts{
     background-color: lavender;
     border: 2px solid steelblue;
 }
-.comments{
+.Comments{
     margin: 25px;
     padding: 10px;
     background-color: thistle;
