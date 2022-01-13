@@ -4,7 +4,7 @@ import Post from "./Post";
 
 const Posts = () => {
 
-    let [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
