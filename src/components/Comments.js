@@ -16,7 +16,8 @@ const Comments = () => {
 
     return (
         <div>
-            {comments.map(value => <Comment key={value.id} id={value.id} name={value.name} email={value.email} body={value.body}/>)}
+            {comments.map(value => <Comment key={value.id} id={value.id} name={value.name} email={value.email}
+                                            body={value.body}/>)}
         </div>
     );
 };

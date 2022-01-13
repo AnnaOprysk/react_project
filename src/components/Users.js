@@ -13,7 +13,7 @@ const Users = () => {
     }, []);
     return (
         <div>
-            {users.map(value => <User key={value.id} name={value.name} username={value.username} email= {value.email}/>)}
+            {users.map(value => <User key={value.id} name={value.name} username={value.username} email={value.email}/>)}
         </div>
     );
 };

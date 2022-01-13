@@ -1,18 +1,21 @@
-.JoinDiv{
+.JoinDiv {
     display: flex;
     margin: 20px;
     padding: 10px;
     column-gap: 10px;
 }
-.Users{
+
+.Users {
     background-color: lightsteelblue;
     border: 2px solid steelblue;
 }
-.Posts{
+
+.Posts {
     background-color: lavender;
     border: 2px solid steelblue;
 }
-.Comments{
+
+.Comments {
     margin: 25px;
     padding: 10px;
     background-color: thistle;
