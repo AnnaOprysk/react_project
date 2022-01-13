@@ -4,7 +4,7 @@ import Flight from "./Flight";
 
 
 const Flights = () => {
-    const [flights,setFlights]= useState([]);
+    const [flights, setFlights] = useState([]);
 
     useEffect(() => {
         fetch('https://api.spacexdata.com/v3/launches')
