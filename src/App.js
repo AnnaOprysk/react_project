@@ -1,32 +1,41 @@
-import {useState} from "react";
+import React, {useEffect, useState} from 'react';
 
+import Form from "./components/Form/Form";
 import Users from "./components/Users/Users";
-import UserDetails from "./components/UserDetails/UserDetails";
-import Posts from "./components/Posts/Posts";
-import css from "./App.module.css"
-import {postService} from "./services/post.service";
+import {userService} from "./services/user.service";
 
-function App() {
-    const [user, setUser] = useState(null);
-    const [posts, setPosts] = useState([]);
+const App = () => {
+    const [users, setUsers] = useState([]);
+    const [filteredUsers, setFilteredUsers] = useState([]);
 
-    const getUser = (user) => {
-        setUser(user);
-        setPosts([]);
-    }
-    const getUserId = (id) => {
-        postService.getByUserId(id).then(value => setPosts([...value]));
+    useEffect(() => {
+        userService.getAll().then(value => {
+            setUsers([...value])
+            setFilteredUsers([...value])
+        })
+    }, []);
+
+    const getFilter = (data) => {
+        let filterArray = [...users]
+
+        if (data.name) {
+            filterArray = filterArray.filter(user => user.name.toLowerCase().includes(data.name.toLowerCase()))
+        }
+        if (data.username) {
+            filterArray = filterArray.filter(user => user.username.toLowerCase().includes(data.username.toLowerCase()))
+        }
+        if (data.email) {
+            filterArray = filterArray.filter(user => user.email.toLowerCase().includes(data.email.toLowerCase()))
+        }
+        setFilteredUsers(filterArray);
     }
 
     return (
         <div>
-            <div className={css.wrap}>
-                <Users getUser={getUser}/>
-                {user && <UserDetails user={user} getUserId={getUserId}/>}
-            </div>
-            {!!posts.length && <Posts posts={posts}/>}
+            <Form getFilter={getFilter}/>
+            <Users users={filteredUsers}/>
         </div>
     );
-}
+};
 
 export default App;

@@ -1,13 +1,10 @@
 import React from 'react';
 
-import css from './User.module.css'
-
-const User = ({user, getUser}) => {
-    const {id, name} = user;
+const User = ({user}) => {
+    const {id, name, username, email} = user;
     return (
-        <div className={css.wrap}>
-            <div className={css.user}>{id}. {name}</div>
-            <button className={css.userButton} onClick={() => getUser(user)}>Details</button>
+        <div style={{display: 'flex'}}>
+            <div>{id}. {name}, {username}, email:{email}</div>
         </div>
     );
 };
