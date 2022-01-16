@@ -1,0 +1,16 @@
+.wrap {
+    display: flex;
+    border: 1px solid indigo;
+    justify-content: space-evenly;
+}
+.user {
+    margin: 60px;
+    font-size: 25px;
+}
+.userButton {
+    height: 30px;
+    background-color: thistle;
+    margin: 60px;
+    border-radius: 5px;
+}
+
