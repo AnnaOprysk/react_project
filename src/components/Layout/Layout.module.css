@@ -1,0 +1,16 @@
+.header {
+    background-color: steelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 60px;
+}
+.header a {
+    color: ivory;
+    text-decoration: none;
+    font-size: 30px;
+}
+.header a[class='active']{
+    color: midnightblue;
+}

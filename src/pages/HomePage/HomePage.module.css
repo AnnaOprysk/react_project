@@ -1,0 +1,13 @@
+.home {
+    height: 300px;
+    width: 800px;
+    background: lightsteelblue;
+    border-radius: 100px;
+    border: 1px solid steelblue;
+    font-size: 80px;
+    font-style: oblique;
+    text-align: center;
+    margin: 100px 100px 0 550px;
+    padding-top: 200px;
+    color: midnightblue;
+}
