@@ -36,16 +36,16 @@ const UsersDetailsPage = () => {
                     <div>
                         <button style={{
                             height: '30px', width: '200px', fontSize: '15px', backgroundColor: 'steelblue',
-                            borderRadius: '5px', marginTop: '10px'
-                        }}>
-                            <Link to={id.toString()} style={{textDecoration: 'none', color: 'white'}}> Show posts of
-                                current user</Link>
+                            borderRadius: '5px', marginTop: '10px'}}>
+                            <Link to={id.toString()} style={{textDecoration: 'none', color: 'white'}}>
+                                Show posts of  current user
+                            </Link>
                         </button>
+
                     </div>
                 </div>
             )}
             <div><Outlet/></div>
-
 
         </div>
     );

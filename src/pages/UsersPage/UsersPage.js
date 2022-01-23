@@ -15,8 +15,9 @@ const UsersPage = () => {
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <div>
                 <h2 style={{margin: '30px', textDecoration: 'underline'}}>List of users:</h2>
-                {users.map(user => <User key={user.id} user={user}/>)}</div>
+                {users.map(user => <User key={user.id} user={user}/>)}
 
+            </div>
             <div style={{margin: '30px', fontSize: '20px', width: '50%'}}>
                 <Outlet/>
             </div>
