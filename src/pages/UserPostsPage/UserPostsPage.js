@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 
 import {userService} from "../../services/user.service";
-import UserPosts from "../../components/UserPosts/UserPosts";
+import {UserPosts} from "../../components";
 
 const UserPostsPage = () => {
     const [userPosts, setUserPosts] = useState([]);
@@ -20,4 +20,4 @@ const UserPostsPage = () => {
     );
 }
 
-export default UserPostsPage;
+export {UserPostsPage};

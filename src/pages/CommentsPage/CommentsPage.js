@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 
 import {postService} from "../../services/post.service";
-import Comment from "../../components/Comment/Comment";
+import {Comment} from "../../components";
 
 const CommentsPage = () => {
     const [comments, setComments] = useState([]);
@@ -20,4 +20,4 @@ const CommentsPage = () => {
     );
 };
 
-export default CommentsPage;
+export  {CommentsPage};

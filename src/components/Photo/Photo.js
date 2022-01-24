@@ -15,4 +15,4 @@ const Photo = ({photo}) => {
     );
 };
 
-export default Photo;
+export {Photo};

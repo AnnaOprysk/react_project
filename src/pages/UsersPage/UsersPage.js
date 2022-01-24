@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {userService} from "../../services/user.service";
-import User from "../../components/User/User";
+import {User} from "../../components";
 
 const UsersPage = () => {
     const [users, setUsers] = useState([]);
@@ -25,4 +25,4 @@ const UsersPage = () => {
     );
 };
 
-export default UsersPage;
+export {UsersPage};

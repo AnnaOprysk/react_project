@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 
 import {albumService} from "../../services/album.service";
-import Photo from "../../components/Photo/Photo";
+import {Photo} from "../../components";
 
 const PhotosPage = () => {
     const [photos, setPhotos] = useState([]);
@@ -20,4 +20,4 @@ const PhotosPage = () => {
     );
 };
 
-export default PhotosPage;
+export {PhotosPage};

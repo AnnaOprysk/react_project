@@ -51,4 +51,4 @@ const UsersDetailsPage = () => {
     );
 };
 
-export default UsersDetailsPage;
+export {UsersDetailsPage};

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 
 import {userService} from "../../services/user.service";
-import Album from "../../components/Album/Album";
+import {Album} from "../../components";
 
 const AlbumsPage = () => {
     const [albums, setAlbums] = useState([]);
@@ -20,4 +20,4 @@ const AlbumsPage = () => {
     );
 };
 
-export default AlbumsPage;
+export {AlbumsPage};
