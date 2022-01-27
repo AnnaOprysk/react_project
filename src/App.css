@@ -9,11 +9,11 @@ button {
 
 .count {
     border: 1px solid;
-    width: 150px;
+    width: 250px;
     height: 100px;
     margin: 50px;
     background-color: lightsteelblue;
-    font-size: 90px;
+    font-size: 60px;
     text-align: center;
     padding-top: 10px;
 }
