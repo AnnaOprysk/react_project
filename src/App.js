@@ -1,37 +1,35 @@
-import './App.css';
 import {useReducer} from "react";
+
+import {Form,Cats,Dogs} from "./components";
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 1:
-            return{...state, }
+        case 'addingCat':
+            return {...state, cats: [...state.cats, {id: new Date().getTime(), name: action.payload.cat}]};
+        case 'addingDog':
+            return {...state, dogs: [...state.dogs, {id: new Date().getTime(), name: action.payload.dog}]};
+        case 'removingCat':
+            return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)};
+        case 'removingDog':
+            return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)};
         default:
             return state;
     }
 }
 
 function App() {
-    const [state, dispatch] = useReducer(reducer, {cat: '',dog:''});
-    console.log(state.name)
-
+    const [{cats,dogs}, dispatch] = useReducer(reducer, {cats: [],dogs:[]});
 
     return (
-        <div>
-            <form>
-                <label> Add Cat:
-                    <input type="text" name={'cat'} onChange={reducer}/>
-                    <button onClick={() => dispatch({type: 'cat'})}>Save</button>
-                </label>
-                <label> Add dog:
-                    <input type="text" name={'dog'} onChange={reducer}/>
-                    <button onClick={() => dispatch({type: 'dog'})}> Save</button>
-                </label>
-
-            </form>
-            <hr/>
-            <div>
-                {state.value}
-                <button>Delete</button>
+        <div style={{textAlign:'center'}}>
+            <Form dispatch={dispatch} />
+            <div style={{display:'flex',justifyContent:'space-evenly'}}>
+                <div>
+                    <Cats cats={cats} dispatch={dispatch}/>
+                </div>
+                <div>
+                    <Dogs dogs={dogs} dispatch={dispatch}/>
+                </div>
             </div>
         </div>
     );
