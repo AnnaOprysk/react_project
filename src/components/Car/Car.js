@@ -1,7 +1,14 @@
 import React from 'react';
 
-const Car = ({car}) => {
+import {carService} from "../../services/car.service";
+
+const Car = ({car,update,setCarToUpdate}) => {
     const {id,model,price,year} = car;
+
+const carDelete = async () => {
+    await carService.deleteById(id);
+    update({});
+}
 
     return (
         <div>
@@ -9,6 +16,8 @@ const Car = ({car}) => {
             <div>model: {model}</div>
             <div>price: {price}</div>
             <div>year: {year}</div>
+            <button onClick={()=>setCarToUpdate(car)}>Update</button>
+            <button onClick={carDelete}>Delete</button>
             <hr/>
         </div>
     );

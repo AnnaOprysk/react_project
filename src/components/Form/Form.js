@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
@@ -6,11 +6,11 @@ import {carService} from "../../services/car.service";
 import {CarValidator} from "../../validators/car.validator";
 
 
-const Form = ({update}) => {
+const Form = ({update, carToUpdate: {id, model, price, year}}) => {
     const [formError, setFormError] = useState({});
     const {
-        register, handleSubmit, watch, formState: {errors}
-    } = useForm({resolver:joiResolver(CarValidator),mode:'onTouched'});
+        register, handleSubmit, watch, formState: {errors}, setValue
+    } = useForm({resolver: joiResolver(CarValidator), mode: 'onTouched'});
 
     // const submit = (data) => {
     //     carService.create(data).then(value => console.log(value)).catch(error=>{
@@ -18,10 +18,21 @@ const Form = ({update}) => {
     //     })
     // }
 
+    useEffect(() => {
+        setValue('model', model);
+        setValue('price', price);
+        setValue('year', year);
+    }, [id]);
+
     const submit = async (data) => {
         try {
-            const newCar = await carService.create(data);
-            update(newCar)
+            let newCar;
+            if (id) {
+                newCar = await carService.updateById(id, data)
+            } else {
+                newCar = await carService.create(data);
+            }
+            update(newCar);
         } catch (error) {
             setFormError(error.response.data);
         }
@@ -41,7 +52,7 @@ const Form = ({update}) => {
                 <div><label>Year: <input type="text" defaultValue={''} {...register('year')}/></label></div>
                 {/*{formError.year && <span>{formError.year[0]}</span>}*/}
                 {errors.year && <span>{errors.year.message}</span>}
-                <button>Save</button>
+                <button>{id ? 'Update' : 'Save'}</button>
             </form>
         </div>
     );
