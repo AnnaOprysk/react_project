@@ -4,7 +4,7 @@ const Dog = ({dog:{id,name},dispatch}) => {
     return (
         <div>
             {name}
-            <button onClick={()=>dispatch({type:'removingDog',payload:{id}})}>Delete</button>
+            <button onClick={()=>dispatch({type:'REMOVING_DOG',payload:{id}})}>Delete</button>
         </div>
     );
 };

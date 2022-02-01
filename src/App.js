@@ -4,13 +4,13 @@ import {Form,Cats,Dogs} from "./components";
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'addingCat':
+        case 'ADDING_CAT':
             return {...state, cats: [...state.cats, {id: new Date().getTime(), name: action.payload.cat}]};
-        case 'addingDog':
+        case 'ADDING_DOG':
             return {...state, dogs: [...state.dogs, {id: new Date().getTime(), name: action.payload.dog}]};
-        case 'removingCat':
+        case 'REMOVING_CAT':
             return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)};
-        case 'removingDog':
+        case 'REMOVING_DOG':
             return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)};
         default:
             return state;

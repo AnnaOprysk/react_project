@@ -10,10 +10,10 @@ const Form = ({dispatch}) => {
     }
 
     const saveCat = () => {
-        dispatch({type: 'addingCat', payload: {cat: catInput.current.value}})
+        dispatch({type: 'ADDING_CAT', payload: {cat: catInput.current.value}})
     };
     const saveDog = () => {
-        dispatch({type: 'addingDog', payload: {dog: dogInput.current.value}})
+        dispatch({type: 'ADDING_DOG', payload: {dog: dogInput.current.value}})
     };
 
     return (
