@@ -1,0 +1,76 @@
+.inputBlock {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.inputMain {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.inputBtn {
+    font-size: 20px;
+    height: 54px;
+    width: 80px;
+    background-color: lightgray;
+    border-radius: 7px;
+    margin-left: 5px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    list-style: none;
+}
+
+.todo {
+  display: flex;
+    justify-content: space-evenly;
+    padding: 5px 10px;
+    margin: 10px;
+    width: 400px;
+}
+
+.todo-exit-active {
+    animation: fade-out 500ms forwards;
+}
+
+.todo-enter-active {
+    animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+.todo-exit-active {
+    animation: fade-out 500ms forwards;
+}
+
+.todo-enter-active {
+    animation: fade-in 500ms forwards;
+}
