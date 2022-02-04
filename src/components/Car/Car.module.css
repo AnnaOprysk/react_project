@@ -1,0 +1,6 @@
+.car {
+    display: flex;
+    margin: 30px;
+    gap: 20px;
+    justify-content: start;
+}

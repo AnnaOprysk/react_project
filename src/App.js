@@ -1,10 +1,18 @@
-import {Form, Cars} from "./components";
+import {CarForm, Cars, UserForm, Users} from "./components";
+import css from "./App.module.css";
 
 function App() {
     return (
-        <div>
-            <Form/>
-            <Cars/>
+        <div className={css.wrapper}>
+            <div>
+                <CarForm/>
+                <Cars/>
+            </div>
+            <hr/>
+            <div>
+                <UserForm/>
+                <Users/>
+            </div>
         </div>
     );
 }
