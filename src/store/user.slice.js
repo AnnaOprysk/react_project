@@ -37,7 +37,7 @@ export const deleteUserThunk = createAsyncThunk(
     async ({id}, {dispatch}) => {
         try {
             await userService.deleteUser(id)
-            dispatch(deleteUser({id}));
+            dispatch(deleteCurrentUser({id}));
         } catch (e) {
             console.log(e);
         }
@@ -48,9 +48,9 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         addUser: (state, action) => {
-            state.users.push(action.payload.data);
+            state.users.push({id:new Date(),...action.payload.data});
         },
-        deleteUser: (state, action) => {
+        deleteCurrentUser: (state, action) => {
             state.users = state.users.filter(user => user.id !== action.payload.id)
         }
     },
@@ -72,5 +72,5 @@ const userSlice = createSlice({
 
 const userReducer = userSlice.reducer;
 
-export const {addUser,deleteUser} = userSlice.actions;
+export const {addUser,deleteCurrentUser} = userSlice.actions;
 export default userReducer;
