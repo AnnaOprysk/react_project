@@ -17,7 +17,7 @@ const Cars = () => {
             {status === 'pending' && <h1>Loading</h1>}
             {error && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
-            {status === 'fulfilled' && <h1>That's all cars in your list</h1>}
+            {status === 'fulfilled' && <h1>That's all cars in your list.</h1>}
         </div>
     );
 };

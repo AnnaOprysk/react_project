@@ -17,7 +17,7 @@ const Users = () => {
             {status === 'pending' && <h1>Loading</h1>}
             {error && <h2>{error}</h2>}
             {users.map(user => <User key={user.id} user={user}/>)}
-            {status === 'fulfilled' && <h1>That's all registered users</h1>}
+            {status === 'fulfilled' && <h1>That's all registered users.</h1>}
         </div>
     );
 };
