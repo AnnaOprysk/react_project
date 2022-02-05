@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 import './App.css';
-import css from './components/ListItem/Checkbox.module.css';
+import css from './components/Checkbox.module.css';
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 
