@@ -1,11 +1,13 @@
-import './App.css';
+import {Form,Todos} from "./components";
+
 
 function App() {
-  return (
-    <div>
-
-    </div>
-  );
+    return (
+        <div>
+            <Form/>
+            <Todos/>
+        </div>
+    );
 }
 
 export default App;
