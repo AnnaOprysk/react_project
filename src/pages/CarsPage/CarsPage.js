@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
+import {Car, CarForm} from "../../components";
 
-const Cars = () => {
+const CarsPage = () => {
     const {cars, status, error} = useSelector(state => state.cars);
     const dispatch = useDispatch();
 
@@ -14,6 +14,7 @@ const Cars = () => {
 
     return (
         <div>
+            <CarForm/>
             {status === 'pending' && <h1>Loading</h1>}
             {error && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
@@ -22,4 +23,4 @@ const Cars = () => {
     );
 };
 
-export {Cars};
+export {CarsPage};

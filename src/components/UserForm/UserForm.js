@@ -14,7 +14,7 @@ const UserForm = () => {
     };
 
     return (
-        <div>
+        <div style={{margin:'30px'}}>
             <form onSubmit={handleSubmit(submit)}>
                 <label>Name: <input type="text" placeholder={'name'} {...register('name')}/></label>
                 <label>Username: <input type="text" placeholder={'username'}{...register('username')}/></label>

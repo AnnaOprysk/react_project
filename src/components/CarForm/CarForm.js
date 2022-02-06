@@ -26,7 +26,7 @@ const CarForm = () => {
     }, [carForUpdate]);
 
     return (
-        <form onSubmit={handleSubmit(submit,submit2)}>
+        <form style={{margin:'30px'}} onSubmit={handleSubmit(submit,submit2)}>
             <label>Model: <input type="text" placeholder={'model'} {...register('model')}/></label>
             <label>Price: <input type="text" placeholder={'price'}{...register('price')}/></label>
             <label>Year: <input type="text" placeholder={'year'}{...register('year')}/></label>

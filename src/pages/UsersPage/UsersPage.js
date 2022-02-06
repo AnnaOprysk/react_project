@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {User} from "../User/User";
 import {getAllUsers} from "../../store";
+import {User, UserForm} from "../../components";
 
-const Users = () => {
+const UsersPage = () => {
     const {users, status, error} = useSelector(state => state.users);
     const dispatch = useDispatch();
 
@@ -14,6 +14,7 @@ const Users = () => {
 
     return (
         <div>
+            <UserForm/>
             {status === 'pending' && <h1>Loading</h1>}
             {error && <h2>{error}</h2>}
             {users.map(user => <User key={user.id} user={user}/>)}
@@ -22,4 +23,4 @@ const Users = () => {
     );
 };
 
-export {Users};
+export {UsersPage};
